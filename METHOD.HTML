@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    function generateRandomSet(count, min, max) {
+        
+        let numbers = [];
+        for (let i = 0; i < count; i++) {
+            let num = Math.random() * (max - min) + min;
+            numbers.push(Math.round(num));
+        }
+        return numbers;
+    }
+
+    function getSingleRandom(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+    }
+
+    function getCurrentDate() {
+        let today = new Date();
+        return today.toDateString();
+    }
+
+    function printDetails() {
+        let randomSet = generateRandomSet(5, 1, 100);
+        let singleRandom = getSingleRandom(1, 100);
+        let date = getCurrentDate();
+
+        document.write("Random Numbers Set:", randomSet);
+
+        document.write("Single Random Number:", singleRandom);
+
+        document.write("Current Date:", date);
+    }
+
+    printDetails();
+</script>
+</body>
+</html>
